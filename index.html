@@ -82,28 +82,36 @@ section{padding:72px 0}
 .moods{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
 .moods li{list-style:none;padding:10px 16px;border-radius:999px;border:1px solid rgba(251,243,230,.2);font-size:.78rem;font-weight:600;color:var(--mute)}
 
-/* plat phare */
-.star{background:linear-gradient(to bottom,var(--ink),var(--ink2) 20%,var(--ink2) 80%,var(--ink))}
-.starcard{display:grid;gap:0;border-radius:28px;overflow:hidden;background:#241a12;border:1px solid rgba(224,171,74,.35);box-shadow:0 24px 60px rgba(0,0,0,.45)}
-.starcard .pic{position:relative;min-height:300px}
-.starcard .pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.badge{position:absolute;top:16px;left:16px;padding:8px 14px;border-radius:999px;background:var(--gold);color:#241707;font-size:.66rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase}
-.starcard .txt{padding:30px 26px 34px;display:flex;flex-direction:column;justify-content:center}
-.starcard h3{font-family:'Passion One',Impact,sans-serif;font-weight:400;font-size:clamp(2.8rem,9vw,4.6rem);line-height:.95;text-transform:uppercase;margin-top:8px}
-.price{margin-top:14px;font-size:1.7rem;font-weight:800;color:var(--gold)}
-.price small{font-size:.8rem;font-weight:700;color:var(--mute);margin-left:4px}
-.starcard p{margin-top:12px;color:var(--mute)}
-.starcard .btn{margin-top:22px;align-self:flex-start}
-@media(min-width:860px){.starcard{grid-template-columns:1.1fr 1fr}.starcard .pic{min-height:460px}.starcard .txt{padding:46px}}
+/* plat signature */
+.star{background:linear-gradient(to bottom,var(--ink),var(--ink2) 18%,var(--ink2) 82%,var(--ink));overflow:hidden}
+.sig{display:grid;gap:34px;align-items:center}
+.sig .txt{text-align:center}
+.sig .kick{display:inline-flex;align-items:center;gap:10px}
+.sig .kick::before,.sig .kick::after{content:"";width:28px;height:1px;background:var(--gold)}
+.sig h2{font-size:clamp(3.6rem,15vw,7.4rem);line-height:.9;margin-top:14px}
+.sig h2 em{display:block;font-style:normal;color:var(--gold)}
+.sig .hook{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-weight:500;font-size:clamp(1.15rem,3.6vw,1.6rem);margin:18px auto 0;max-width:460px;color:var(--cream)}
+.sig .meta{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:20px}
+.sig .meta span{padding:8px 14px;border-radius:999px;border:1px solid rgba(224,171,74,.5);font-size:.66rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+.sig .ctas{margin-top:26px}
+.frame{position:relative;max-width:440px;margin:0 auto;width:100%}
+.frame .ph{position:relative;aspect-ratio:4/5;border-radius:32px;overflow:hidden;box-shadow:0 30px 70px rgba(0,0,0,.55);border:1px solid rgba(224,171,74,.4);transform:rotate(-1.6deg)}
+.frame .ph img{width:100%;height:100%;object-fit:cover}
+.frame::before{content:"";position:absolute;inset:18px -14px -14px 18px;border-radius:32px;border:1.5px solid rgba(224,171,74,.45);transform:rotate(2deg)}
+.sticker{position:absolute;right:-6px;bottom:-18px;z-index:2;width:116px;height:116px;border-radius:50%;background:var(--gold);color:#241707;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 14px 34px rgba(0,0,0,.5);transform:rotate(8deg);text-align:center;line-height:1}
+.sticker b{font-family:'Passion One',Impact,sans-serif;font-weight:400;font-size:2.1rem}
+.sticker small{font-size:.62rem;font-weight:800;letter-spacing:.16em;margin-top:3px}
+@media(min-width:860px){.sig{grid-template-columns:1.05fr 1fr;gap:70px}.sig .txt{text-align:left}.sig .kick::before{display:none}.sig .hook{margin-left:0}.sig .meta,.sig .ctas{justify-content:flex-start}.frame{max-width:none}.sticker{right:-22px;width:136px;height:136px}.sticker b{font-size:2.5rem}}
 
 /* comedy */
-.comedy{position:relative;isolation:isolate;overflow:hidden;text-align:center}
-.comedy::before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(ellipse at 50% 0%,rgba(224,171,74,.32),transparent 60%),linear-gradient(to bottom,var(--ink),#2a1608 50%,var(--ink))}
+.comedy{position:relative;isolation:isolate;overflow:hidden;text-align:center;padding:96px 0}
+.comedy::before{content:"";position:absolute;inset:0;z-index:-2;background:#1c1208 url("comedy-club.webp") center/cover no-repeat}
+.comedy::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(to bottom,var(--ink) 0%,rgba(18,13,9,.7) 20%,rgba(18,13,9,.78) 72%,var(--ink) 100%)}
 .mic{width:54px;height:54px;margin:0 auto 6px;stroke:var(--gold);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
-.comedy h2{font-size:clamp(3.4rem,13vw,7rem);margin-top:10px}
+.comedy h2{font-size:clamp(3.4rem,13vw,7rem);margin-top:10px;text-shadow:0 4px 30px rgba(0,0,0,.6)}
 .comedy h2 em{font-style:normal;color:var(--gold)}
 .when{display:inline-block;margin-top:18px;padding:10px 22px;border-radius:999px;background:var(--gold);color:#241707;font-weight:800;font-size:.8rem;letter-spacing:.2em;text-transform:uppercase}
-.comedy .lead{margin-left:auto;margin-right:auto}
+.comedy .lead{margin-left:auto;margin-right:auto;color:var(--cream);text-shadow:0 2px 14px rgba(0,0,0,.7)}
 .comedy .btn{margin-top:26px}
 
 /* carte */
@@ -153,7 +161,7 @@ footer a{color:var(--gold);font-weight:700}
 <header class="top" id="top">
   <a class="brand" href="#accueil"><img src="logo-karibu.webp" width="34" height="34" alt="">KARIBU</a>
   <nav aria-label="Navigation">
-    <a href="#ambiance">Ambiance</a><a href="#poulet-mayo">Plat phare</a><a href="#comedy">Comedy club</a><a href="#carte">La carte</a><a href="#infos">Infos</a>
+    <a href="#ambiance">Ambiance</a><a href="#poulet-mayo">Signature</a><a href="#comedy">Comedy club</a><a href="#carte">La carte</a><a href="#infos">Infos</a>
   </nav>
   <a class="btn main" href="menu.html">Le menu</a>
 </header>
@@ -167,7 +175,7 @@ footer a{color:var(--gold);font-weight:700}
     <p class="pitch">Bienvenue chez Karibu : à table le jour, en lounge la nuit, ouvert 24h/24 à Brazzaville.</p>
     <div class="pills">
       <span class="pill">Ouvert 24h/24</span>
-      <span class="pill">Poulet mayo</span>
+      <span class="pill">Signature · Poulet mayo</span>
       <span class="pill hot">Comedy club · Tous les vendredis</span>
     </div>
     <div class="ctas">
@@ -194,19 +202,23 @@ footer a{color:var(--gold);font-weight:700}
   </div>
 </section>
 
-<!-- PLAT PHARE -->
+<!-- PLAT SIGNATURE -->
 <section class="star" id="poulet-mayo">
   <div class="wrap rv">
-    <p class="eyebrow">Le plat phare</p>
-    <div class="starcard" style="margin-top:20px">
-      <div class="pic"><img src="cat-barbecue.webp" alt="Poulet mayo, plat phare de Karibu" loading="lazy"><span class="badge">Plat signature</span></div>
+    <div class="sig">
       <div class="txt">
-        <p class="eyebrow">Barbecue</p>
-        <h3>Poulet<br>mayo</h3>
-        <div class="price">7 500<small>FC</small></div>
-        <p>Le plat phare de la maison, à découvrir en salle ou à commander directement sur WhatsApp.</p>
-        <a class="btn wa" href="https://wa.me/242068201220?text=Bonjour%20Karibu%2C%20je%20souhaite%20commander%20un%20Poulet%20mayo." target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24"><path d="M3 21l1.6-4.7A8.5 8.5 0 1 1 8 19.5z"/></svg>Commander sur WhatsApp</a>
+        <p class="eyebrow kick">La signature Karibu</p>
+        <h2>Poulet <em>mayo</em></h2>
+        <p class="hook">Le plat signature de la maison. Celui qu'il faut goûter chez Karibu.</p>
+        <div class="meta"><span>Barbecue</span><span>7 500 FC</span></div>
+        <div class="ctas">
+          <a class="btn wa" href="https://wa.me/242068201220?text=Bonjour%20Karibu%2C%20je%20souhaite%20commander%20un%20Poulet%20mayo." target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M3 21l1.6-4.7A8.5 8.5 0 1 1 8 19.5z"/></svg>Commander sur WhatsApp</a>
+          <a class="btn line" href="menu.html#plats/barbecue">Voir le barbecue</a>
+        </div>
+      </div>
+      <div class="frame">
+        <div class="ph"><img src="poulet-mayo.webp" alt="Poulet mayo, le plat signature de Karibu" loading="lazy" width="600" height="750"></div>
+        <div class="sticker"><b>7 500</b><small>FC</small></div>
       </div>
     </div>
   </div>
